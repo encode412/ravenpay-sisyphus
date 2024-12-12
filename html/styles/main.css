@@ -94,6 +94,10 @@ i.fa-chevron-right {
   align-items: center;
 }
 
+.header__user-info-icons img {
+  width: 30px;
+}
+
 /* title bar */
 .title-bar {
   background: #20252b;
@@ -324,7 +328,8 @@ i.fa-small {
   transition: all ease-in-out 200ms;
 }
 .order-book__tab:hover,
-.trade-form__tab-item:hover {
+.trade-form__tab-item:hover,
+.order-book__tab-active {
   cursor: pointer;
   background-color: #21262c;
   border-radius: 8px;
@@ -338,7 +343,7 @@ i.fa-small {
 
 .order-book__icons {
   display: flex;
-  gap: 2px;
+  gap: 12px;
 }
 
 .order-book__icon {
@@ -455,6 +460,7 @@ i.fa-small {
   border: 1px solid #20252b;
   background-color: #1c2127;
   text-align: right;
+  color: #a7b1bc;
 }
 
 .trade-form__label {
@@ -529,4 +535,5 @@ i.fa-small {
   outline: none;
   border: none;
   color: #ffffff;
+  border-radius: 6px;
 }
