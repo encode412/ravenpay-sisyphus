@@ -394,6 +394,18 @@ function updateDurationText(text) {
   selectElement.classList.add('hidden');
 }
 
+function openSelectCurrency() {
+  const selectElement = document.querySelector('.trade-form__currency-select');
+  selectElement.classList.toggle('hidden');
+}
+
+function updateCurrencySelect(text) {
+  const durationText = document.getElementById('currency-value');
+  durationText.textContent = text;
+  const selectElement = document.querySelector('.trade-form__currency-select');
+  selectElement.classList.add('hidden');
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   fetchCoins();
   fetchOrderBookData(selectedCoin);

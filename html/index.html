@@ -1,5 +1,3 @@
-<!-- index.html -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -284,11 +282,37 @@
           <div class="trade-form__account-value-label">
             <span>Total account value</span>
             <div class="trade-form__currency-selector">
-              <span>NGN</span>
-              <i class="fa-solid fa-small fa-chevron-down"></i>
+              <span id="currency-value">NGN</span>
+              <i class="fa-solid fa-small fa-chevron-down"  onclick="openSelectCurrency()"></i>
             </div>
           </div>
           <span class="trade-form__balance">0.00</span>
+
+          <div class="trade-form__currency-select">
+            <div class="trade-form__header-duration-selector">
+              <div class="trade-form__header-duration-selector-content">
+                <div
+                  class="trade-form__header-duration-selector-content-text"
+                  onclick="updateCurrencySelect(this.textContent)"
+                >
+                  Fill or Kill
+                </div>
+                <div
+                  class="trade-form__header-duration-selector-content-text"
+                  onclick="updateCurrencySelect(this.textContent)"
+                >
+                  Good till cancelled
+                </div>
+                <div
+                  class="trade-form__header-duration-selector-content-text"
+                  onclick="updateCurrencySelect(this.textContent)"
+                >
+                  Good till date
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
         <div class="trade-form__open-orders">
           <div class="trade-form__open-orders-label">
