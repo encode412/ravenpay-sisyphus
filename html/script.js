@@ -92,7 +92,7 @@ function displayCoinData(data) {
       </div>
     `;
     coinElement.addEventListener("click", () => {
-      fetchOrderBookData(selectedCoin || coin.CoinInfo.Name);
+      fetchOrderBookData(coin.CoinInfo.Name);
       populateCandlestickChart(selectedCoin || coin.CoinInfo.Name);
       populateColumnChart(selectedCoin || coin.CoinInfo.Name);
       selectedCoin = coin.CoinInfo.Name;
@@ -382,9 +382,21 @@ async function populateColumnChart(symbol) {
   chartBar.render();
 }
 
+function openSelectOptions() {
+  const selectElement = document.querySelector('.trade-form__header-duration');
+  selectElement.classList.toggle('hidden');
+}
+
+function updateDurationText(text) {
+  const durationText = document.getElementById('duration-text');
+  durationText.textContent = text;
+  const selectElement = document.querySelector('.trade-form__header-duration');
+  selectElement.classList.add('hidden');
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   fetchCoins();
-  fetchOrderBookData("BTC");
+  fetchOrderBookData(selectedCoin);
   getTradingPairs();
   populateCandlestickChart("BTC");
   populateColumnChart("BTC");

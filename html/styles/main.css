@@ -489,6 +489,103 @@ i.fa-small {
   margin: 10px auto;
 }
 
+.trade-form__header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.trade-form__header-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.trade-form__header-type-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #a7b1bc;
+}
+
+.trade-form__header-type-icon {
+  font-size: 12px;
+  margin-left: 8px;
+  color: #666;
+}
+
+.trade-form__header-duration {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 0px;
+  border: 1px #32383f solid;
+  background-color: #20252b;
+}
+
+.hidden {
+  display: none;
+}
+
+.trade-form__header-duration-selector {
+  position: relative;
+}
+
+.trade-form__header-duration-selector-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 8px;
+  margin: 10px auto;
+}
+
+.trade-form__header-duration-selector-content-text {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.trade-form__header-duration-selector-content-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.trade-form__header-duration-selector-content-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trade-form__header-duration-selector-content-text-symbol {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.trade-form__header-duration-selector-content-text-name {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+}
+
+.trade-form__header-duration-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #a7b1bc;
+  margin-left: 8px;
+}
+
+.trade-form__header-duration-icon {
+  font-size: 12px;
+  margin-left: 8px;
+  color: #666;
+  cursor: pointer;
+}
+
 .trade-form__button {
   width: 100%;
   display: flex;
