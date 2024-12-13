@@ -3,367 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
-    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-      integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <link rel="stylesheet" href="./styles/main.css" />
-  </head>
-  <body>
-    <!-- header component -->
-    <header class="header">
-      <div class="header__logo-container">
-        <a href="./index.html"
-          ><img src="./assets/images/logo.svg" alt="Logo"
-        /></a>
-        <nav class="header__nav">
-          <ul class="header__nav-list">
-            <li class="header__nav-item">
-              <a href="./exchange.html" class="header__nav-link">Exchange</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="./wallet.html" class="header__nav-link">Wallets</a>
-            </li>
-            <li class="header__nav-item">
-              <a href="./roqqu-hub.html" class="header__nav-link">Roqqu Hub</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-      <div class="header__user-info">
-        <div class="header__user-info-name">
-          <span>Olatunde Jeremiah</span>
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
-        <div class="header__user-info-icons">
-          <i class="fa-solid fa-globe"></i>
-          <img src="./assets/images/signout.png" alt="" />
-        </div>
-      </div>
-    </header>
-
-    <!-- title bar -->
-    <div class="title-bar">
-      <div class="title-bar__container">
-        <div class="title-bar__select">
-          <span class="title-bar__value">BTC/USDT</span>
-          <i
-            class="fa-solid fa-small fa-chevron-down"
-            id="limit-dropdown-toggle"
-          ></i>
-          <span class="title-bar__price">$20.634</span>
-          <div class="trade-form__dropdown" id="limit-dropdown">
-            <span class="trade-form__dropdown-header">Select Market</span>
-            <div class="trade-form__dropdown-search">
-              <input
-                type="text"
-                placeholder="Search"
-                class="trade-form__dropdown-search-input"
-                id="search-input"
-              />
-              <i
-                class="trade-form__dropdown-search-icon fa-search fa-solid"
-              ></i>
-            </div>
-            <hr class="trade-form__dropdown-divider" color="#a7b1bc" />
-            <div class="trade-form__dropdown-filters">
-              <div class="trade-form__dropdown-filter-item">All</div>
-              <div class="trade-form__dropdown-filter-item">USD</div>
-              <div class="trade-form__dropdown-filter-item">BTC</div>
-            </div>
-            <div id="loader" style="display: none">Loading...</div>
-            <div id="no-results" style="display: none">No results found.</div>
-            <ul class="trade-form__dropdown-list" id="coin-list"></ul>
-          </div>
-        </div>
-        <div class="title-bar__item title-bar__change">
-          <div class="title-bar__stat-block">
-            <i class="fa-regular fa-small fa-clock"></i>
-            <span class="title-bar__label">24hr change</span>
-          </div>
-          <span class="title-bar__stat">520.80 +1.25%</span>
-        </div>
-        <div class="title-bar__item title-bar__high">
-          <div class="title-bar__stat-block">
-            <i class="fa-solid fa-small fa-arrow-up"></i>
-            <span class="title-bar__label">24hr high</span>
-          </div>
-          <span class="title-bar__stat">520.80 +1.25%</span>
-        </div>
-        <div class="title-bar__item title-bar__low">
-          <div class="title-bar__stat-block">
-            <i class="fa-solid fa-small fa-arrow-down"></i>
-            <span class="title-bar__label">24hr low</span>
-          </div>
-          <span class="title-bar__stat">520.80 +1.25%</span>
-        </div>
-        <div class="title-bar__item title-bar__volume">
-          <div class="title-bar__stat-block">
-            <i class="fa-solid fa-small fa-chart-column"></i>
-            <span class="title-bar__label">24hr volume</span>
-          </div>
-          <span class="title-bar__stat">520.80 +1.25%</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- chart -->
-    <div class="chart-section">
-      <div id="synced-charts" class="synced-charts">
-        <div id="chart-candlestick"></div>
-        <div id="chart-bar"></div>
-      </div>
-
-      <!-- order-book -->
-      <div class="order-book__container">
-        <div class="order-book__header">
-          <div class="order-book__tabs">
-            <span class="order-book__tab order-book__tab-active"
-              >Order Book</span
-            >
-            <span class="order-book__tab">Recent trades</span>
-          </div>
-          <div class="order-book__actions">
-            <div class="order-book__icons">
-              <img
-                src="./assets/images/first_tag.png"
-                alt="click"
-                class="order-book__icon"
-              />
-              <img
-                src="./assets/images/second_tag.png"
-                alt="click"
-                class="order-book__icon"
-              />
-              <img
-                src="./assets/images/third_tag.png"
-                alt="click"
-                class="order-book__icon"
-              />
-            </div>
-            <div class="order-book__selector-header">
-              <span class="order-book__selector-text">10</span>
-              <i class="fa-solid fa-small fa-chevron-down"></i>
-            </div>
-          </div>
-
-          <div class="order-book__selector">
-            <div class="order-book__selector-body">
-              <div class="order-book__selector-row">
-                <div class="order-book__selector-cell">
-                  <span class="order-book__selector-label">Price</span>
-                  <span class="order-book__selector-unit">(USDT)</span>
-                </div>
-                <div class="order-book__selector-cell">
-                  <span class="order-book__selector-label">Amount</span>
-                  <span class="order-book__selector-unit">(BTC)</span>
-                </div>
-                <div class="order-book__selector-cell">Total</div>
-              </div>
-              <div class="order-book__selector-row-group">
-                <div
-                  class="order-book__selector-row order-book__selector-value"
-                  id="trading-pairs"
-                >
-                  <div class="order-book__selector-cell">Loading...</div>
-                  <!-- <div class="order-book__selector-cell">3688282.02</div>
-                  <div class="order-book__selector-cell">3688282.02</div> -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- order-book -->
-      <div class="trade-form">
-        <div class="trade-form__tab">
-          <span class="trade-form__tab-item">Order Book</span>
-          <span class="trade-form__tab-item order-book__tab-active"
-            >Recent trades</span
-          >
-        </div>
-        <div class="trade-form__select">
-          <div class="trade-form__select-item">
-            <span class="trade-form__select-item-text">Limit</span>
-          </div>
-          <div class="trade-form__select-item">
-            <span class="trade-form__select-item-text">Market</span>
-          </div>
-          <div class="trade-form__select-item">
-            <span class="trade-form__select-item-text">Stop</span>
-          </div>
-        </div>
-        <div class="trade-form__input-group">
-          <input
-            type="text"
-            name="limit_price"
-            placeholder="0.00"
-            class="trade-form__input"
-          />
-          <div class="trade-form__label">
-            <span>Limit</span>
-            <i class="fa-solid fa-small fa-chevron-down"></i>
-          </div>
-        </div>
-        <div class="trade-form__input-group">
-          <input
-            type="text"
-            name="limit_price"
-            placeholder="0.00"
-            class="trade-form__input"
-          />
-          <div class="trade-form__label">
-            <span>Amount</span>
-            <i class="fa-solid fa-small fa-chevron-down"></i>
-          </div>
-        </div>
-        <div class="trade-form__header">
-          <div class="trade-form__header-type">
-            <span class="trade-form__header-type-text">Type</span>
-            <i
-              class="trade-form__header-type-icon fa-solid fa-small fa-chevron-down"
-            ></i>
-          </div>
-          <div class="trade-form__header-type">
-            <span class="trade-form__header-duration-text" id="duration-text"
-              >Good till cancelled</span
-            >
-            <i
-              class="trade-form__header-duration-icon fa-solid fa-small fa-chevron-down"
-              onclick="openSelectOptions()"
-            ></i>
-          </div>
-          <div class="trade-form__header-duration">
-            <div class="trade-form__header-duration-selector">
-              <div class="trade-form__header-duration-selector-content">
-                <div
-                  class="trade-form__header-duration-selector-content-text"
-                  onclick="updateDurationText(this.textContent)"
-                >
-                  Fill or Kill
-                </div>
-                <div
-                  class="trade-form__header-duration-selector-content-text"
-                  onclick="updateDurationText(this.textContent)"
-                >
-                  Good till cancelled
-                </div>
-                <div
-                  class="trade-form__header-duration-selector-content-text"
-                  onclick="updateDurationText(this.textContent)"
-                >
-                  Good till date
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="trade-form__checkbox-group">
-          <div class="trade-form__checkbox">
-            <input type="checkbox" name="" id="" />
-            <span>Post Only</span>
-            <i class="fa-solid fa-small fa-chevron-down"></i>
-          </div>
-        </div>
-        <div class="trade-form__total">
-          <span>Total</span>
-          <span>0.00</span>
-        </div>
-        <div class="trade-form__button">
-          <button>Buy BTC</button>
-          <hr />
-        </div>
-        <div class="trade-form__account-value">
-          <div class="trade-form__account-value-label">
-            <span>Total account value</span>
-            <div class="trade-form__currency-selector">
-              <span id="currency-value">NGN</span>
-              <i
-                class="fa-solid fa-small fa-chevron-down"
-                onclick="openSelectCurrency()"
-              ></i>
-            </div>
-          </div>
-          <span class="trade-form__balance">0.00</span>
-
-          <div class="trade-form__currency-select">
-            <div class="trade-form__header-duration-selector">
-              <div class="trade-form__header-currency-selector-content">
-                <div
-                  class="trade-form__header-currency-selector-content-item"
-                  onclick="updateCurrencySelect('NGN')"
-                >
-                  <img
-                    class="trade-form__header-currency-selector-content-item-icon"
-                    src=""
-                    alt=""
-                  />
-                  <div
-                    class="trade-form__header-currency-selector-content-item-info"
-                  >
-                    <span
-                      class="trade-form__header-currency-selector-content-item-info-name"
-                      >Nigeria</span
-                    >
-                    <span
-                      class="trade-form__header-currency-selector-content-item-info-code"
-                      >NGN</span
-                    >
-                  </div>
-                </div>
-                <div
-                  class="trade-form__header-currency-selector-content-item"
-                  onclick="updateCurrencySelect(this.textContent)"
-                >
-                  <span
-                    class="trade-form__header-currency-selector-content-item-text"
-                    >Good till cancelled</span
-                  >
-                </div>
-                <div
-                  class="trade-form__header-currency-selector-content-item"
-                  onclick="updateCurrencySelect(this.textContent)"
-                >
-                  <span
-                    class="trade-form__header-currency-selector-content-item-text"
-                    >Good till date</span
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="trade-form__open-orders">
-          <div class="trade-form__open-orders-label">
-            <span>Open orders</span>
-            <div class="trade-form__open-orders-type">
-              <span>Available</span>
-            </div>
-          </div>
-          <div class="trade-form__open-orders-values">
-            <span>0.00</span>
-            <span>0.00</span>
-          </div>
-        </div>
-        <div class="trade-form__deposit-button">
-          <button>Deposit</button>
-        </div>
-      </div>
-    </div>
-
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/4.1.0/apexcharts.min.js"
-      integrity="sha512-pX8wly6uaNHjO2Idm8xpq7Fu52iU/F3IK2rS8vTUlw7138ZsDCgfljwotyOpQxycTqK4MryB4Pv7ArDmzx7sPQ=="
+      src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"
+      integrity="sha512-a+SUDuwNzXDvz4XrIcXHuCf089/iJAoN4lmrXJg18XnduKK6YlDHNRalv4yd1N40OKI80tFidF+rqTFKGPoWFQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="script.js"></script>
+    <link href="https://fonts.cdnfonts.com/css/satoshi" rel="stylesheet" />
+    <link rel="stylesheet" href="./auth/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="auth-container">
+      <h2>Sign In</h2>
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email address"
+        required
+      />
+      <input
+        type="text"
+        id="full-name"
+        placeholder="Enter your full name"
+        required
+      />
+      <button id="submit-btn">Submit</button>
+      <div class="user-info" id="user-info">
+        <img
+          src="./assets/images/avatar.png"
+          id="gravatar"
+          alt="User Gravatar"
+        />
+        <span id="username"></span>
+      </div>
+    </div>
+
+    <script type="module" src="./auth/script.js"></script>
   </body>
 </html>

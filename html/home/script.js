@@ -7,6 +7,8 @@ const searchInput = document.getElementById("search-input");
 const dropdownToggle = document.getElementById("limit-dropdown-toggle");
 const dropdown = document.getElementById("limit-dropdown");
 const tradingPairElement = document.getElementById("trading-pairs");
+const gravatarImg = document.getElementById("gravatar");
+const usernameSpan = document.getElementById("username");
 let selectedCoin = "BTC";
 
 // Function to fetch trading pairs and their data
@@ -407,6 +409,15 @@ function updateCurrencySelect(text) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  const gravatarUrl = localStorage.getItem("gravatarUrl");
+  console.log(gravatarUrl)
+  const fullName = localStorage.getItem("fullName");
+
+  if (gravatarUrl && fullName) {
+    gravatarImg.src = gravatarUrl;
+    usernameSpan.textContent = fullName;
+  }
+  
   fetchCoins();
   fetchOrderBookData(selectedCoin);
   getTradingPairs();

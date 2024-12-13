@@ -519,7 +519,7 @@ i.fa-small {
 
 .trade-form__header-duration,
 .trade-form__currency-select {
-  display: flex;
+  display: none;
   width: 50%;
   align-items: center;
   justify-content: center;
@@ -531,8 +531,12 @@ i.fa-small {
   background-color: #20252b;
 }
 
+.trade-form__currency-select {
+  border-radius: 24px;
+}
+
 .hidden {
-  display: none;
+  display: flex;
 }
 
 .trade-form__header-duration-selector,
@@ -549,6 +553,25 @@ i.fa-small {
   margin: 10px auto;
 }
 
+.trade-form__header-currency-selector-content-item-info {
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  align-items: center;
+  gap: 10px;
+}
+.trade-form__header-currency-selector-content-item-info-name {
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.trade-form__header-currency-selector-content-item-info-group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+}
 .trade-form__header-duration-selector-content-text {
   color: #ffffff;
   font-weight: 500;
@@ -585,7 +608,8 @@ i.fa-small {
   margin-left: 8px;
 }
 
-.trade-form__header-duration-icon {
+.trade-form__header-duration-icon,
+.fa-chevron-down {
   font-size: 12px;
   margin-left: 8px;
   color: #666;
