@@ -77,6 +77,9 @@ body {
   border-radius: 8px;
   background-color: #12171d;
   padding: 15px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 i {
@@ -532,11 +535,13 @@ i.fa-small {
   display: none;
 }
 
-.trade-form__header-duration-selector {
+.trade-form__header-duration-selector,
+.trade-form__header-currency-selector {
   position: relative;
 }
 
-.trade-form__header-duration-selector-content {
+.trade-form__header-duration-selector-content,
+.trade-form__header-currency-selector-content {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -638,4 +643,13 @@ i.fa-small {
   border: none;
   color: #ffffff;
   border-radius: 6px;
+}
+
+.coming-soon__container {
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

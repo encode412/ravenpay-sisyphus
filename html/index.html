@@ -19,17 +19,19 @@
     <!-- header component -->
     <header class="header">
       <div class="header__logo-container">
-        <img src="./assets/images/logo.svg" alt="Logo" />
+        <a href="./index.html"
+          ><img src="./assets/images/logo.svg" alt="Logo"
+        /></a>
         <nav class="header__nav">
           <ul class="header__nav-list">
             <li class="header__nav-item">
-              <a href="#" class="header__nav-link">Exchange</a>
+              <a href="./exchange.html" class="header__nav-link">Exchange</a>
             </li>
             <li class="header__nav-item">
-              <a href="#" class="header__nav-link">Wallets</a>
+              <a href="./wallet.html" class="header__nav-link">Wallets</a>
             </li>
             <li class="header__nav-item">
-              <a href="#" class="header__nav-link">Roqqu Hub</a>
+              <a href="./roqqu-hub.html" class="header__nav-link">Roqqu Hub</a>
             </li>
           </ul>
         </nav>
@@ -283,36 +285,60 @@
             <span>Total account value</span>
             <div class="trade-form__currency-selector">
               <span id="currency-value">NGN</span>
-              <i class="fa-solid fa-small fa-chevron-down"  onclick="openSelectCurrency()"></i>
+              <i
+                class="fa-solid fa-small fa-chevron-down"
+                onclick="openSelectCurrency()"
+              ></i>
             </div>
           </div>
           <span class="trade-form__balance">0.00</span>
 
           <div class="trade-form__currency-select">
             <div class="trade-form__header-duration-selector">
-              <div class="trade-form__header-duration-selector-content">
+              <div class="trade-form__header-currency-selector-content">
                 <div
-                  class="trade-form__header-duration-selector-content-text"
-                  onclick="updateCurrencySelect(this.textContent)"
+                  class="trade-form__header-currency-selector-content-item"
+                  onclick="updateCurrencySelect('NGN')"
                 >
-                  Fill or Kill
+                  <img
+                    class="trade-form__header-currency-selector-content-item-icon"
+                    src=""
+                    alt=""
+                  />
+                  <div
+                    class="trade-form__header-currency-selector-content-item-info"
+                  >
+                    <span
+                      class="trade-form__header-currency-selector-content-item-info-name"
+                      >Nigeria</span
+                    >
+                    <span
+                      class="trade-form__header-currency-selector-content-item-info-code"
+                      >NGN</span
+                    >
+                  </div>
                 </div>
                 <div
-                  class="trade-form__header-duration-selector-content-text"
+                  class="trade-form__header-currency-selector-content-item"
                   onclick="updateCurrencySelect(this.textContent)"
                 >
-                  Good till cancelled
+                  <span
+                    class="trade-form__header-currency-selector-content-item-text"
+                    >Good till cancelled</span
+                  >
                 </div>
                 <div
-                  class="trade-form__header-duration-selector-content-text"
+                  class="trade-form__header-currency-selector-content-item"
                   onclick="updateCurrencySelect(this.textContent)"
                 >
-                  Good till date
+                  <span
+                    class="trade-form__header-currency-selector-content-item-text"
+                    >Good till date</span
+                  >
                 </div>
               </div>
             </div>
           </div>
-
         </div>
         <div class="trade-form__open-orders">
           <div class="trade-form__open-orders-label">
