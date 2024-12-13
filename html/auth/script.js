@@ -13,7 +13,7 @@ submitBtn.addEventListener("click", () => {
     localStorage.setItem("gravatarUrl", gravatarUrl);
     localStorage.setItem("email", email);
     localStorage.setItem("fullName", fullName);
-    window.location.href = "/html/home/index.html";
+    window.location.href = "../html/home/index.html";
   }
 });
 
