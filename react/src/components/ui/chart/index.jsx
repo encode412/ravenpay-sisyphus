@@ -9,7 +9,6 @@ const Chart = ({ symbol }) => {
     populateCandlestickChart(symbol);
     populateColumnChart(symbol);
   }, [symbol]);
-  console.log(symbol);
   
   const getCandlestickData = async (symbol) => {
     try {

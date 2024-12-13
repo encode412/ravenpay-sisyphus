@@ -23,7 +23,6 @@ const TitleBar = ({ handleCoinSelect }) => {
           "https://min-api.cryptocompare.com/data/top/totalvolfull?limit=100&tsym=USD"
         );
         const data = await response.json();
-        console.log(data);
         setCoins(data.Data);
       } catch (error) {
         console.error(error);

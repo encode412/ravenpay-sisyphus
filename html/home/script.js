@@ -18,7 +18,6 @@ async function getTradingPairs() {
       `https://min-api.cryptocompare.com/data/top/totalvolfull?tsym=USDT&api_key=${API_KEY}`
     );
     const data = await response.json();
-    // console.log(data);
     displayTradingPairs(data);
   } catch (error) {
     console.error(error);
@@ -163,7 +162,6 @@ async function fetchOrderBookData(pair) {
       `https://min-api.cryptocompare.com/data/ob/l1/top?fsyms=${pair}&tsyms=USD,EUR&e=coinbase&api_key=${API_KEY}`
     );
     const data = await response.json();
-    console.log(data, "order");
     displayOrderBookData(data);
   } catch (error) {
     console.error(error);
@@ -212,7 +210,6 @@ async function getCandlestickData(symbol) {
       `https://min-api.cryptocompare.com/data/histohour?fsym=${symbol}&tsym=USD&limit=60&api_key=${API_KEY}`
     );
     const data = await response.json();
-    console.log(data);
     return data.Data;
   } catch (error) {
     console.error(error);
@@ -410,7 +407,6 @@ function updateCurrencySelect(text) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const gravatarUrl = localStorage.getItem("gravatarUrl");
-  console.log(gravatarUrl)
   const fullName = localStorage.getItem("fullName");
 
   if (gravatarUrl && fullName) {

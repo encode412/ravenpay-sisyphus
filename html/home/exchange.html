@@ -21,14 +21,15 @@
               <a href="./wallet.html" class="header__nav-link">Wallets</a>
             </li>
             <li class="header__nav-item">
-              <a href="#" class="header__nav-link">Roqqu Hub</a>
+              <a href="./roqqu-hub.html" class="header__nav-link">Roqqu Hub</a>
             </li>
           </ul>
         </nav>
       </div>
       <div class="header__user-info">
         <div class="header__user-info-name">
-          <span>Olatunde Jeremiah</span>
+          <img src="" id="gravatar" alt="" />
+          <span id="username">Olatunde Jeremiah</span>
           <i class="fa-solid fa-chevron-right"></i>
         </div>
         <div class="header__user-info-icons">
@@ -40,5 +41,17 @@
     <div class="coming-soon__container">
       <div>Coming Soon</div>
     </div>
+
+    <script>
+      const usernameSpan = document.getElementById("username");
+      const gravatarImg = document.getElementById("gravatar");
+
+      const fullName = localStorage.getItem("fullName");
+      const gravatarUrl = localStorage.getItem("gravatarUrl");
+      if (fullName && gravatarUrl) {
+        usernameSpan.textContent = fullName;
+        gravatarImg.src = gravatarUrl;
+      }
+    </script>
   </body>
 </html>

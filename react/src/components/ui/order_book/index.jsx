@@ -16,7 +16,6 @@ const OrderBook = ({ selectedCoin }) => {
           `https://min-api.cryptocompare.com/data/ob/l1/top?fsyms=${selectedCoin}&tsyms=USD,EUR&e=coinbase&api_key=${API_KEY}`
         );
         const data = await response.json();
-        console.log(data);
         setOrderBookData(data);
         setLoading(false);
       } catch (error) {
